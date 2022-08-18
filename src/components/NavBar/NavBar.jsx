@@ -1,5 +1,6 @@
 import React from "react"
 import Form from "./Form"
+import CardWidjet from "./CardWidjet"
 
 
 const NavBar = () => {
@@ -7,7 +8,7 @@ return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container-fluid">
     <a className="navbar-brand" href="#">
-      Navbar
+      Sebastian Banga
     </a>
     <button
       className="navbar-toggler"
@@ -47,6 +48,7 @@ return (
       <Form contPlace="Productos" />
     </div>
   </div>
+  <CardWidjet />
 </nav>
 
 )}

@@ -1,0 +1,23 @@
+.divCounter{
+    padding: 50px;
+    background-color: #666;
+    margin: 10px;
+    width: 300px;
+}
+.divInfoCounter{
+   padding: 20px; 
+}
+.divInfoCounter p {
+    margin: 30px;
+}
+
+.divBtn {
+    display: flex;
+    justify-content: space-around;
+}
+
+.divBtnConfirmar {
+    margin-top:20px;
+    display: flex;
+    justify-content: center;
+}

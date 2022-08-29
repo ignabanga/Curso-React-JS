@@ -1,21 +1,24 @@
-.divCounter{
-    padding: 50px;
-    background-color: #666;
-    margin: 10px;
-    width: 300px;
+
+.card-body p{
+    margin: 10px auto;
 }
-.divInfoCounter{
-   padding: 20px; 
-}
-.divInfoCounter p {
-    margin: 30px;
+.card-body img {
+    margin: 0 15px;
+    margin-bottom: 10px;
+    height: 140px;
+    width: 140px;
 }
 
+.divInfoCounter{
+   display: flex;
+}
+.divInfoCounter p {
+    margin: 8px auto;
+}
 .divBtn {
     display: flex;
     justify-content: space-around;
 }
-
 .divBtnConfirmar {
     margin-top:20px;
     display: flex;

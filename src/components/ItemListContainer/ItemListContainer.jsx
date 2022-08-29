@@ -1,16 +1,35 @@
-import React from 'react';
-import Counter from './Counter'
+import React, {useState, useEffect} from 'react';
 import './ItemListContainer.css'
+import dataItem from '../../data/dataItem'
+import ItemList from './Item/ItemList'
+
+
+
+
+
 
 const ItemListContainer = () => {
-    function onAdd(count){
-        console.log(`Se han seleccionado ${count} productos`)
-    }
+
+    const [productos, setProducto] = useState([]);
+
+    useEffect(()=>{
+    const getItemData = new Promise((resolve, reject) =>{
+        setTimeout(() =>{
+            resolve(dataItem);
+        }, 2000);
+    });
+
+    getItemData.then((response)=> setProducto(response))
+
+    },[]);
+
+   
     return (
-        <div className='divCounter'>
-            <Counter stock={10} onAdd={onAdd}/>
-        </div>
+        <>
+            <ItemList list={productos} />
+        </>
     );
-}
+    
+};
 
 export default ItemListContainer;

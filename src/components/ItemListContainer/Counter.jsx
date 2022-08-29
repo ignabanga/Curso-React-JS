@@ -1,17 +1,15 @@
 import React from 'react';
-import useCounter from '../Hooks/useCounter'
+import useCounter from '../../Hooks/useCounter'
 
 
 
 const Counter = ({stock, onAdd}) => {
 const {add, substract, reset, count} = useCounter(stock);
-    return (
-        <div>
+    return ( 
             <div>
                 <div className='divInfoCounter'>
-                    <h1>Counter</h1>
-                    <p>Stock : {stock}</p>
-                    <p>Cantidad: {count}</p>
+                    <p>Stock : {stock} </p>
+                    <p>Cantidad: {count} </p>
                 </div>
                 
 
@@ -23,8 +21,7 @@ const {add, substract, reset, count} = useCounter(stock);
                 <div className='divBtnConfirmar'>
                     <button className='btn btn-primary' onClick={()=> onAdd(count)}>Confirmar</button>
                 </div>
-            </div>
-        </div>
+             </div>
     );
 }
 

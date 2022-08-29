@@ -1,0 +1,7 @@
+.DivItemList {
+    display: flex;
+    margin: 10px auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}

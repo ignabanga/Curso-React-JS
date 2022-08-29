@@ -12,7 +12,7 @@ const Item = ({producto}) => {
                 <div className="card-header">{producto.nombre}</div>
                  <div className="card-body">
                     <img src={producto.imagen}/>
-                    <p className="card-text">Precio: {producto.precio}</p>
+                    <p className="card-text">Precio: ${producto.precio}</p>
                     <p className="card-text">Marca: {producto.marca}</p>
             </div>
         <Counter stock={producto.stock} onAdd={onAdd}/>

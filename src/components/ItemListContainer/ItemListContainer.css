@@ -1,4 +1,7 @@
 
+.cardDiv {
+    margin: 8px;
+}
 .card-body p{
     margin: 10px auto;
 }
@@ -20,7 +23,8 @@
     justify-content: space-around;
 }
 .divBtnConfirmar {
-    margin-top:20px;
+    margin-top:10px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
 }

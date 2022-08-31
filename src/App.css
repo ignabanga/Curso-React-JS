@@ -1,7 +1,7 @@
 .DivItemList {
     display: flex;
     margin: 10px auto;
-    justify-content: space-between;
+    justify-content:flex-start;
     flex-wrap: wrap;
     flex-grow: 1;
 }

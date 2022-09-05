@@ -28,3 +28,20 @@
     display: flex;
     justify-content: center;
 }
+
+.DivItemDetailContainer{
+    display: flex;
+    margin: 10px auto;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.DivItemDetail {
+    margin: 8px;
+}
+
+.divImgDetail img{
+    width: 280px;
+    height: 280px;
+}

@@ -8,6 +8,7 @@ import Item from './Item';
             
            <> {list.map((producto) => (
                 <Item producto={producto} key={producto.id}/>
+                
             ))}</>
         );
     }

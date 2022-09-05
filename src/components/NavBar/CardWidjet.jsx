@@ -4,7 +4,7 @@ import './CardWidjet.css'
 const CardWidjet = () => {
     return (
         < >
-            <img src="carrito.png" />
+            <img src="http://localhost:3000/carrito.png" />
         </>
     );
 }

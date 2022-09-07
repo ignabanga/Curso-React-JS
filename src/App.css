@@ -1,3 +1,9 @@
+*{
+font-family: 'Montserrat', sans-serif;
+}
+body{
+    background-image: linear-gradient(0, #ffded7 0, #f7d5d1 16.67%, #e7cbca 33.33%, #d5c1c1 50%, #c3b7b8 66.67%, #b3aeae 83.33%, #a4a5a5 100%);
+}
 .DivItemList {
     display: flex;
     margin: 10px auto;

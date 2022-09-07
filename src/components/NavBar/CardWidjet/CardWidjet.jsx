@@ -1,10 +1,11 @@
 import React from 'react';
 import './CardWidjet.css'
+import carrito from '../../../img/carrito.png'
 
 const CardWidjet = () => {
     return (
         < >
-            <img src="http://localhost:3000/carrito.png" />
+            <img src={carrito} />
         </>
     );
 }

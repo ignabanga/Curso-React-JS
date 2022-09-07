@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Counter from './Counter/Counter'
 
 
@@ -11,7 +11,7 @@ const ItemDetail = ({itemDetailData, onAdd }) => {
         <div className="card mb-3">
           <h3 className="card-header">{itemDetailData.nombre}</h3>
           <div className="card-body">
-            <div className='divImgDetail'><img src={"http://localhost:3000/" + itemDetailData.imagen} /></div>
+            <div className='divImgDetail'><img src={itemDetailData.imagen} /></div>
             <p className="card-text">
               Info: {itemDetailData.info}
             </p>

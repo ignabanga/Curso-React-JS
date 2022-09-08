@@ -1,11 +1,11 @@
 import {useState} from 'react';
 
-const useCounter = (stock) => {
+const useCounter = ({producto}) => {
 
     const [count, setCount] = useState(0);  
 
     function add(){
-        if (count < stock) setCount(count +1)
+        if (count < producto.stock) setCount(count +1)
     }
 
     function substract(){
@@ -18,6 +18,7 @@ const useCounter = (stock) => {
     return {
         add, substract, reset, count
     }
+   
 }
 
 export default useCounter;

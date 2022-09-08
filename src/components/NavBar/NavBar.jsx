@@ -27,7 +27,7 @@ const NavBar = () => {
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/">
-                Home
+                Inicio
                 <span className="visually-hidden">(current)</span>
               </Link>
             </li>

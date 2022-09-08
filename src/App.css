@@ -11,3 +11,11 @@ body{
     flex-wrap: wrap;
     flex-grow: 1;
 }
+.btn-comprar{
+    text-decoration: none;
+    color: #aaa;
+}
+.btn-comprar:hover{
+    text-decoration: none;
+    color: #fff;
+}

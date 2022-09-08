@@ -1,11 +1,12 @@
 import React from 'react';
 import './CardWidjet.css'
 import carrito from '../../../img/carrito.png'
+import {Link} from 'react-router-dom'
 
 const CardWidjet = () => {
     return (
         < >
-            <img src={carrito} />
+           <Link to={'/Cart'}><img src={carrito} /></Link> 
         </>
     );
 }

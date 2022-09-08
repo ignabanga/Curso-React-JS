@@ -1,16 +1,30 @@
 
+
+/*CARD ITEM*/
+
+
 .cardDiv {
-    margin: 8px;
+    margin: auto;
 }
 .card-body p{
+    text-align: center;
     margin: 10px auto;
 }
+
+.card-header{
+    text-align: center;
+}
+
 .card-body img {
     margin: 0 15px;
     margin-bottom: 10px;
     height: 140px;
     width: 140px;
 }
+
+
+ /* COUNTER */ 
+
 
 .divInfoCounter{
    display: flex;
@@ -22,12 +36,16 @@
     display: flex;
     justify-content: space-around;
 }
+
 .divBtnConfirmar {
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
 }
+
+
+/* DETAIL CONTEINER */
 
 .DivItemDetailContainer{
     display: flex;
@@ -41,7 +59,12 @@
     margin: 8px;
 }
 
-.divImgDetail img{
-    width: 280px;
-    height: 280px;
+.divImgDetail{
+    display: flex;
 }
+.divImgDetail img{
+    margin: auto;
+    width: 240px;
+    height: 240px;
+}
+

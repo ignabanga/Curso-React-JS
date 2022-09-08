@@ -9,9 +9,6 @@ import Spinner from '../MiniComponents/Spinner';
 
 const ItemDetailContainer = () => {
 
-    function onAdd(count) {
-        console.log(`Se han seleccionado ${count} productos`);
-    }
     const { id } = useParams();
     const [itemDetail, setItemDetail] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +23,7 @@ const ItemDetailContainer = () => {
 
     return (isLoading ? <Spinner /> :
         <div className='DivItemDetailContainer'>
-            <ItemDetail itemDetailData={itemDetail} onAdd={onAdd} />
+            <ItemDetail itemDetailData={itemDetail}/>
         </div>
     );
 }

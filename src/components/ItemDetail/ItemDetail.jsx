@@ -2,7 +2,7 @@ import React from 'react';
 import Counter from './Counter/Counter'
 
 
-const ItemDetail = ({itemDetailData, onAdd }) => {
+const ItemDetail = ({itemDetailData}) => {
 
 
   return (
@@ -23,7 +23,7 @@ const ItemDetail = ({itemDetailData, onAdd }) => {
             <li className="list-group-item">Envío: {itemDetailData.envio}</li>
           </ul>
           <div className="card-body">
-            <Counter stock={itemDetailData.stock} onAdd={onAdd} />
+            <Counter stock={itemDetailData.stock} producto={itemDetailData}/>
           </div>
         </div>
       </div>

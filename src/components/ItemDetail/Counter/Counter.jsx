@@ -28,9 +28,9 @@ function addToCart(producto, count) {
                 </div>
 
                 <div className='divBtn'>
-                    <button className='btn btn-primary' onClick={add}>+</button>
-                    <button className='btn btn-primary' onClick={reset}>Reset</button>
                     <button className='btn btn-primary' onClick={substract}>-</button>
+                    <button className='btn btn-primary' onClick={reset}>Reset</button>
+                    <button className='btn btn-primary' onClick={add}>+</button>
                 </div>
                 <div className='divBtnConfirmar'>
                 <Link className='btn-comprar' to={'/cart'}><button className='btn btn-primary' onClick={()=> addToCart(producto, count)}>Comprar</button></Link>

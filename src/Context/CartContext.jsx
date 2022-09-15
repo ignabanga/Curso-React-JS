@@ -49,9 +49,7 @@ const CartProvider = ({children}) => {
     }
 
     const deleteProd = (id)=>{
-        const auxCarrito = productos;
-        let indice = auxCarrito.findIndex(prod => prod.id == id)
-        auxCarrito.splice(indice,1)
+        const auxCarrito = productos.filter(prod => prod.id !== id)
         setProductos(auxCarrito)
     }
 

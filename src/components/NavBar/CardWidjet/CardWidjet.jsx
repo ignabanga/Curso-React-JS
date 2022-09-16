@@ -5,11 +5,18 @@ import {Link} from 'react-router-dom'
 import { useCartContext } from '../../../Context/CartContext';
 
 const CardWidjet = () => {
-    const {productos} = useCartContext();
+    const {getTotalProd} = useCartContext();
+
+    
    
     return (
         < >
-           <Link to={'/Cart'}><img src={carrito} /></Link> 
+            <Link to={'/Cart'}>
+                <span className="span-carrito">
+                    {getTotalProd()}
+                </span>
+                <img src={carrito} />    
+            </Link> 
         </>
     );
 }

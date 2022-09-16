@@ -8,3 +8,7 @@ img {
 img:hover {
     cursor:pointer;
 }
+
+.span-carrito{
+    position: absolute;
+}

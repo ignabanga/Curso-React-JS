@@ -1,19 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useCartContext } from '../../Context/CartContext';
 
 const CartResume = () => {
-    const { productos } = useCartContext();
-    const [carritoVacio, setCarrito] = useState(true);
-    useEffect(() => {
-        if (productos.length !== 0) {
-            setCarrito(false)
-            console.log(productos)
-        } else {
-            setCarrito(true)
-        }
-    }, []);
+    const { getTotalPrice, clearCart, carritoVacio} = useCartContext();
 
- 
     
     return (
         <>
@@ -21,12 +11,12 @@ const CartResume = () => {
                 <div className='list-group'>
                     <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
                         <div className="d-flex w-100 justify-content-between">
-                            <h5 className="mb-1">Total: ${}</h5>
+                            <h5 className="mb-1">Total: ${getTotalPrice()}</h5>
                             <button className='btn btn-primary'>Terminar Compra</button>
+                            <button className='btn btn-primary' onClick={()=> clearCart()}>Limpiar Carrito</button>
                         </div>
                     </a>
                 </div>
-
             }
         </>
     );

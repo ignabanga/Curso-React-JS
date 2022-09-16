@@ -8,7 +8,7 @@ import { useCartContext } from '../../../Context/CartContext';
 const Counter = ({stock, producto}) => {
 
 const {add, substract, reset, count} = useCounter({producto});
-const {addProduct, productos} = useCartContext();
+const {addProduct} = useCartContext();
 
 function addToCart(producto, count) {
 

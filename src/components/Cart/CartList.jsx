@@ -5,17 +5,8 @@ import CartEmpty from './CartEmpty';
 
 export const CartList = () => {
     
-    const { productos} = useCartContext();
+    const { productos,carritoVacio} = useCartContext();
     
-    const [carritoVacio, setCarrito] = useState(true);
-    useEffect(() => {
-        if(productos.length != 0){
-            setCarrito(false)
-        }else{
-            setCarrito(true)
-        }
-       
-    }, []);
     return (
         
             <> 

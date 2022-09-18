@@ -1,22 +1,23 @@
 import React from 'react';
 import './CardWidjet.css'
 import carrito from '../../../img/carrito.png'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useCartContext } from '../../../Context/CartContext';
 
 const CardWidjet = () => {
-    const {getTotalProd} = useCartContext();
+    const { getTotalProd, productos } = useCartContext();
 
-    
-   
+
+
     return (
-        < >
-            <Link to={'/Cart'}>
+        < >{productos.length <= 0 ? <></> :
+            <Link to={'/cart'}>
                 <span className="span-carrito">
                     {getTotalProd()}
                 </span>
-                <img src={carrito} />    
-            </Link> 
+                <img className='cart' src={carrito} />
+            </Link>
+        }
         </>
     );
 }

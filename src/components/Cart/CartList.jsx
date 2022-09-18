@@ -1,16 +1,16 @@
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import Cart from './Cart';
 import { useCartContext } from '../../Context/CartContext';
-import CartEmpty from './CartEmpty';
+
 
 export const CartList = () => {
     
-    const { productos,carritoVacio} = useCartContext();
+    const { productos} = useCartContext();
     
     return (
         
             <> 
-                {carritoVacio ? <CartEmpty/> : productos.map((producto) => (
+                {productos.map((producto) => (
                 <Cart producto={producto} key={producto.id}/> 
             ))}
             </>

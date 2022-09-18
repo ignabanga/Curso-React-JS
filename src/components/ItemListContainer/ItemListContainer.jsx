@@ -6,6 +6,7 @@ import ItemList from './Item/ItemList';
 import { useParams } from 'react-router-dom';
 
 
+
 const ItemListContainer = () => {
 
     const [productos, setProducto] = useState([]);
@@ -28,9 +29,11 @@ const ItemListContainer = () => {
     },[categoriasId]);
 
     return (isLoading ? <Spinner/> :
+        <>
         <div className='DivItemList'>
             <ItemList list={productos} />
         </div>
+        </>
     );
 };
 

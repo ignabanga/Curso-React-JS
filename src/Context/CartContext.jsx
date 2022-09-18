@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState,useEffect } from 'react';
+import React, { createContext, useContext, useState} from 'react';
 
 export const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
@@ -6,7 +6,7 @@ export const useCartContext = () => useContext(CartContext);
 const CartProvider = ({ children }) => {
 
     const [productos, setProductos] = useState([]);
-    const [carritoVacio, setCarrito] = useState(true);
+    
    
 
     const addProduct = (producto) => {
@@ -15,7 +15,6 @@ const CartProvider = ({ children }) => {
             if ((producto.count + foundProducto.count) <= producto.stock) {
                 foundProducto.count = foundProducto.count + producto.count;
                 setProductos([...productos])
-                setCarrito(false)
             } else {
                 alert("No hay mas stock")
             }
@@ -23,7 +22,6 @@ const CartProvider = ({ children }) => {
             const auxCarrito = productos;
             auxCarrito.push(producto)
             setProductos([...auxCarrito])
-            setCarrito(false)
         }
     }
 
@@ -48,7 +46,6 @@ const CartProvider = ({ children }) => {
             } else {
                 deleteProd(id)
                 if (productos.lenght == "0") {
-                    setCarrito(true)
                 }
             }
         }
@@ -57,9 +54,6 @@ const CartProvider = ({ children }) => {
     const deleteProd = (id) => {
         const auxCarrito = productos.filter(prod => prod.id !== id)
         setProductos([...auxCarrito])
-        if (productos.lenght == "0") {
-            setCarrito(true)
-        }
     }
 
     const getTotalPrice = () => {
@@ -74,12 +68,11 @@ const CartProvider = ({ children }) => {
 
     const clearCart = () =>{
         setProductos([]);
-        setCarrito(true)
     }
 
 
     return (
-        <CartContext.Provider value={{ productos,carritoVacio, addProduct, addProd, deleteProd, restProd, getTotalPrice, getTotalProd,clearCart }}>
+        <CartContext.Provider value={{ productos, addProduct, addProd, deleteProd, restProd, getTotalPrice, getTotalProd,clearCart }}>
             {children}
         </CartContext.Provider>
     )

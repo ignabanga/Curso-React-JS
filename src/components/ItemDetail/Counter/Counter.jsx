@@ -12,7 +12,6 @@ const {addProduct} = useCartContext();
 
 function addToCart(producto, count) {
 
-
     if(count !== 0){
     const productoCarrito = {id:producto.id, count:count, nombre:producto.nombre, precio:producto.precio, img:producto.imagen, stock:producto.stock}
      addProduct(productoCarrito)
@@ -33,9 +32,10 @@ function addToCart(producto, count) {
                     <button className='btn btn-primary' onClick={add}>+</button>
                 </div>
                 <div className='divBtnConfirmar'>
-                <Link className='btn-comprar' to={'/cart'}><button className='btn btn-primary' onClick={()=> addToCart(producto, count)}>Comprar</button></Link>
+               {count !== 0 ? <Link className='btn-comprar' to={'/cart'}><button className='btn btn-primary' onClick={()=> addToCart(producto, count)}>Comprar</button></Link> : <></>} 
                 </div>
              </div>
+    
     );
 }
 

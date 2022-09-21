@@ -8,10 +8,10 @@ const Cart = ({ producto }) => {
     return (
         <>
             {
-                <div className="card mb-3" style={{ maxWidth: 640 }}>
+                <div className="card mb-3 divCartItem" style={{ maxWidth: 640 }}>
                     <div className="row g-0">
                         <div className="col-md-4">
-                            <img src={producto.img} className="img-carrito rounded-start" />
+                            <img src={producto.imagen} className="img-carrito rounded-start" />
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">

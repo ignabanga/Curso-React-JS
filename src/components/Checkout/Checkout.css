@@ -1,0 +1,12 @@
+.btnCardEnd{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnCardEnd > * {
+    margin: 0px 10px;
+}
+.legendTitle{
+    margin: 10px;
+}

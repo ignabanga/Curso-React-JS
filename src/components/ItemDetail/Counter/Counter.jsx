@@ -13,7 +13,7 @@ const {addProduct} = useCartContext();
 function addToCart(producto, count) {
 
     if(count !== 0){
-    const productoCarrito = {id:producto.id, count:count, nombre:producto.nombre, precio:producto.precio, img:producto.imagen, stock:producto.stock}
+    const productoCarrito = {...producto,count}
      addProduct(productoCarrito)
     }
     

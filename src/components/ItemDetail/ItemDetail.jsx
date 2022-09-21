@@ -13,14 +13,13 @@ const ItemDetail = ({itemDetailData}) => {
           <div className="card-body">
             <div className='divImgDetail'><img src={itemDetailData.imagen} /></div>
             <p className="card-text">
-              Info: {itemDetailData.info}
+              {itemDetailData.info}
             </p>
           </div>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">Precio: ${itemDetailData.precio}</li>
             <li className="list-group-item">Stock: {itemDetailData.stock}</li>
             <li className="list-group-item">Marca: {itemDetailData.marca}</li>
-            <li className="list-group-item">Envío: {itemDetailData.envio}</li>
           </ul>
           <div className="card-body">
             <Counter stock={itemDetailData.stock} producto={itemDetailData}/>

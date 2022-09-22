@@ -3,7 +3,7 @@ import { doc, collection, addDoc, getFirestore } from 'firebase/firestore';
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC7uUlYhC9hpyaE-AbNuKOEVfOoS7xT6Zw",
+    apiKey:process.env.REACT_APP_WEATHER_API_KEY,
     authDomain: "proyectofinalcoder-b92b0.firebaseapp.com",
     projectId: "proyectofinalcoder-b92b0",
     storageBucket: "proyectofinalcoder-b92b0.appspot.com",

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useCartContext } from '../../Context/CartContext';
 import { db } from "../../firebase/firebase";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection , doc, increment, updateDoc} from "firebase/firestore";
 import { useNavigate } from 'react-router-dom';
 import './Checkout.css'
+import Swal from 'sweetalert2'
 
 const Checkout = () => {
     const { productos, getTotalPrice, clearCart } = useCartContext();
@@ -15,6 +16,7 @@ const Checkout = () => {
         Email: '',
         Telefono: '',
     })
+    const [emailConfirm, setEmailConfirm] = useState();
 
     const { Nombre, Email, Telefono } = buyer
     const generateOrder = async (data) => {
@@ -43,13 +45,43 @@ const Checkout = () => {
         const dia = new Date()
         const total = getTotalPrice()
         const data = { buyer, items, dia, total }
-        console.log('data', data)
-        generateOrder(data)
+        if (!buyer.Nombre || !buyer.Email || !buyer.Telefono) {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Por favor, complete todos los campos',
+                icon: 'error',
+                confirmButtonText: 'Entendido'
+              })
+          } else {
+            if(emailConfirm !== buyer.Email){
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Los emails no coinciden',
+                    icon: 'error',
+                    confirmButtonText: 'Entendido'
+                  })
+            }else{
+                generateOrder(data)
+                handleUpdate();
+            }
+          }
     }
 
     const handleClear = () => {
         clearCart()
         navigate('/')
+    }
+
+    const handleUpdate = async () =>{
+        productos.map(async (producto)=>{
+           const  productoRef = doc(db, "productos", producto.id)
+            await updateDoc(productoRef,{
+                stock: increment(-producto.count)
+            })
+        })
+    }
+    const handleEmailConfirm = (e) =>{
+        setEmailConfirm(e.target.value)
     }
     return (
         <>{!orderId ?
@@ -83,9 +115,24 @@ const Checkout = () => {
                             />
                             <label htmlFor="floatingInput1">Email</label>
                         </div>
+                        <div className="form-floating mb-3">
+                            <input
+                                type="email"
+                                name="emailConfirm"
+                                className="form-control"
+                                id="floatingInput4"
+                                placeholder="name@example.com"
+                                autoComplete="off"
+                                value={emailConfirm}
+                                onChange={handleEmailConfirm}
+                            />
+                            <label htmlFor="floatingInput4">Email Confirm</label>
+                        </div>
                         <div className="form-floating mb-3" >
                             <input
                                 type="text"
+                                inputmode="numeric"
+                                pattern="\d*"
                                 name="Telefono"
                                 className="form-control"
                                 value={Telefono}
@@ -94,7 +141,7 @@ const Checkout = () => {
                                 autoComplete="off"
                                 onChange={handleInputChange}
                             />
-                            <label htmlFor="floatingInput2">Numero de telefono</label>
+                            <label htmlFor="floatingInput2">Numero de Telefono:</label>
                         </div>
                         <div className="btnCardEnd">
                         <input
@@ -110,10 +157,10 @@ const Checkout = () => {
                 </form>
             </div>)
             :
-            <div class="card border-success mb-3">
-            <div class="card-body">
-                <h4 class="card-title">Compra realizada con exito!</h4>
-                <p class="card-text"><strong>Gracias por comprar!</strong> Su orden de compra es: {orderId}</p>
+            <div className="card border-success mb-3">
+            <div className="card-body">
+                <h4 className="card-title">Compra realizada con exito!</h4>
+                <p className="card-text"><strong>Gracias por comprar!</strong> Su orden de compra es: {orderId}</p>
                 <button className="btn btn-primary" onClick={handleClear}>
                             Volver al inicio
                         </button>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useCounter from '../../../Hooks/useCounter'
 import { useCartContext } from '../../../Context/CartContext';
+import './Counter.css'
 
 
 

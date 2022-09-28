@@ -19,7 +19,7 @@ const ItemListContainer = () => {
     try {
       setIsLoading(true)
       const document = categoria ? query(collection(db, "productos"), where("categoria", "==", categoria))
-        : collection(db, "productos")
+        : collection(db, "productos") 
       const col = await getDocs(document)
       const result = col.docs.map((doc) => doc = { id: doc.id, ...doc.data() })
       setProducto(result)

@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import Swal from 'sweetalert2'
 
 const useCounter = ({producto}) => {
 
@@ -6,7 +7,15 @@ const useCounter = ({producto}) => {
 
     function add(){
         if (count < producto.stock) setCount(count +1)
-    }
+        else {
+            Swal.fire({
+                title: 'Error!',
+                text: 'No se pueden agregar mas productos',
+                icon: 'error',
+                confirmButtonText: 'Entendido'
+              })
+        }
+    } 
 
     function substract(){
         if(count > 0) setCount(count -1)

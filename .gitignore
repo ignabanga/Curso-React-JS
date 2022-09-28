@@ -15,7 +15,8 @@
 #Api keys
 .env
 
-
+#Data de los productos
+/data
 
 # misc
 .DS_Store

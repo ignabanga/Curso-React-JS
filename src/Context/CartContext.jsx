@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState} from 'react';
+import Swal from 'sweetalert2';
 
 export const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
@@ -9,6 +10,7 @@ const CartProvider = ({ children }) => {
     
    
 
+     /* FUNCION PARA AGREGAR PRODUCTOS DESDE EL ITEM DETAIL */
     const addProduct = (producto) => {
         const foundProducto = productos.find((prod) => prod.id === producto.id)
         if (foundProducto) {
@@ -16,7 +18,12 @@ const CartProvider = ({ children }) => {
                 foundProducto.count = foundProducto.count + producto.count;
                 setProductos([...productos])
             } else {
-                alert("No hay mas stock")
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'La cantidad de productos elegidos supera el stock',
+                    icon: 'error',
+                    confirmButtonText: 'Entendido'
+                  })
             }
         } else {
             const auxCarrito = productos;
@@ -25,6 +32,7 @@ const CartProvider = ({ children }) => {
         }
     }
 
+    /* FUNCION PARA AGREGAR PRODUCTOS DENTRO DEL CARRITO */
     const addProd = (id, stock, count) => {
         const foundProducto = productos.find((producto) => producto.id === id)
         if (foundProducto) {
@@ -32,7 +40,12 @@ const CartProvider = ({ children }) => {
                 foundProducto.count++;
                 setProductos([...productos])
             } else {
-                alert("No hay mas stock")
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'No hay mas stock disponible por el momento',
+                    icon: 'error',
+                    confirmButtonText: 'Entendido'
+                  })
             }
         }
     }

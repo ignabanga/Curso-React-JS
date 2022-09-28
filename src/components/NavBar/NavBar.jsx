@@ -1,5 +1,4 @@
 import React from "react"
-import Form from "./Form/Form"
 import CardWidjet from "./CardWidjet/CardWidjet"
 import { Link } from "react-router-dom"
 import Dropdown from "./DropDown/Dropdown"
@@ -9,9 +8,9 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container-fluid ">
-        <a className="navbar-brand shake shake-freeze" href="#">
+        <span className="navbar-brand" user-selec="none">
           Sebastian Banga Page
-        </a>
+        </span>
         <button
           className="navbar-toggler"
           type="button"
@@ -33,12 +32,11 @@ const NavBar = () => {
             </li>
             <Dropdown/>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/contacto">
                 Contactenos
-              </a>
+              </Link>
             </li>
           </ul>
-          <Form contPlace="Productos" />
         </div>
       </div>
       <CardWidjet />

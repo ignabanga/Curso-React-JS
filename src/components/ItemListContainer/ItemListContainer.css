@@ -1,6 +1,5 @@
-/* ITEM LIST */
 
-.DivItemList {
+.divItemList {
     margin-top: .8rem;
     display: grid;
     column-gap: 1.1rem;
@@ -9,7 +8,8 @@
     grid-template-columns: repeat(auto-fill, minmax(15rem,1fr));
 }
 
-/*CARD ITEM*/
+
+
 
 
 .cardDiv {
@@ -32,7 +32,7 @@
 }
 
 
- /* COUNTER */ 
+ 
 
 
 .divInfoCounter{
@@ -54,7 +54,7 @@
 }
 
 
-/* DETAIL CONTEINER */
+
 
 .DivItemDetailContainer{
     display: flex;

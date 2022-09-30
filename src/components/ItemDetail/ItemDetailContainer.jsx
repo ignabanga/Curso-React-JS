@@ -8,6 +8,7 @@ import {doc, getDoc} from 'firebase/firestore';
 
 
 
+
 const ItemDetailContainer = () => {
 
     const { id } = useParams();

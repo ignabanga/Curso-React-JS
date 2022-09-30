@@ -1,0 +1,15 @@
+.divFooter img{
+    width: 28px;
+    height: 28px;
+    margin-right: 40px;
+    margin-top: 5px;
+}
+
+.divFooter img:hover{
+    transition: all .5s linear;
+    transform: scale(1.4);
+}
+
+.divFooter{
+    margin-top: auto;
+}

@@ -8,6 +8,7 @@ import { collection, query, where, getDocs } from 'firebase/firestore'
 
 
 
+
 const ItemListContainer = () => {
 
   const [productos, setProducto] = useState([]);
@@ -19,7 +20,7 @@ const ItemListContainer = () => {
     try {
       setIsLoading(true)
       const document = categoria ? query(collection(db, "productos"), where("categoria", "==", categoria))
-        : collection(db, "productos") 
+        : collection(db, "productos")
       const col = await getDocs(document)
       const result = col.docs.map((doc) => doc = { id: doc.id, ...doc.data() })
       setProducto(result)
@@ -37,9 +38,11 @@ const ItemListContainer = () => {
 
 
   return (isLoading ? <Spinner /> :
-    <div className='DivItemList'>
+
+    <div className='divItemList'>
       <ItemList list={productos} />
     </div>
+
   );
 };
 

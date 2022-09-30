@@ -9,7 +9,7 @@ const NavBar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container-fluid ">
         <span className="navbar-brand" user-selec="none">
-          Sebastian Banga Page
+           Ecommerce React  <img src="https://firebasestorage.googleapis.com/v0/b/proyectofinalcoder-b92b0.appspot.com/o/iconoRopa.ico?alt=media&token=9065e2a4-5613-4833-8994-e6fa957f5e0f" alt="Ropa" /> 
         </span>
         <button
           className="navbar-toggler"
@@ -31,11 +31,6 @@ const NavBar = () => {
               </Link>
             </li>
             <Dropdown/>
-            <li className="nav-item">
-              <Link className="nav-link" to="/contacto">
-                Contactenos
-              </Link>
-            </li>
           </ul>
         </div>
       </div>

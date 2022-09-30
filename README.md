@@ -22,4 +22,4 @@ En el directorio del proyecto, puede ejecutar:
 #### `npm install firebase`
 
 ### Preview :
-![Image text](https://firebasestorage.googleapis.com/v0/b/proyectofinalcoder-b92b0.appspot.com/o/Proyecto.png?alt=media&token=7b839057-29ce-448b-b719-aa8545858ebe)
+![Image text](https://firebasestorage.googleapis.com/v0/b/proyectofinalcoder-b92b0.appspot.com/o/Proyecto.png?alt=media&token=0169bf23-dc56-4091-a0bf-4c09ed5c64ed)
